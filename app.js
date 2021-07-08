@@ -10,6 +10,18 @@ bot.start((ctx) => {
     chatID = ctx.message.chat.id;
 })
 
+bot.use(async (ctx, next) => {
+    if(typeof ctx.update?.message?.document == "undefined") {
+        // TODO: Check if user already has uploaded a file
+        next();
+        return;
+    }
+
+    const { file_id } = ctx.update.message.document;
+    const fileUrl = await ctx.telegram.getFileLink(file_id);
+    console.log(fileUrl.href); // TODO: Add this url to the database
+})
+
 bot.help((ctx) => {
     ctx.reply('hello, please type /start to register yourself with our services!');
 })
