@@ -5,6 +5,7 @@ const bot = new Telegraf(process.env.BOT)
 var chatID = 0;
 bot.start((ctx) => {
     ctx.reply('Welcome we will now register this chat window for further communications!');
+    ctx.reply('If this is your first time using our services, please to enter /help to get more details.');
     chatID = ctx.message.chat.id;
 
     // Store the new user/prepare to update user with unique id as chatID
@@ -23,7 +24,10 @@ bot.use(async (ctx, next) => {
 })
 
 bot.help((ctx) => {
-    ctx.reply('hello, please type /start to register yourself with our services!');
+    ctx.reply('If you have seen the welcome message, your chat has been registered with our services.');
+    ctx.reply('Type /register to confirm your registration and this implies that you have agreed to our T&C');
+    ctx.reply('Type /terms to list out our terms and conditions');
+    ctx.reply('Type /file to upload or update the file that was provided');
 })
 
 bot.launch()
