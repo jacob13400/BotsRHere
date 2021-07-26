@@ -30,6 +30,22 @@ bot.help((ctx) => {
     ctx.reply('Type /file to upload or update the file that was provided');
 })
 
+bot.command('terms', (ctx) => {
+    // List all the terms and conditions
+    ctx.reply('We own your first born and would like to use them as our waifu model.');
+})
+
+bot.command('register', (ctx) => {
+    // Just add an another index that states that they have agreed to terms and conditions
+    // For legal purposes
+
+    ctx.reply('If you are seeing this meessage then you have agreed to all our terms and conditions.');
+})
+
+bot.command('file', (ctx) => {
+    ctx.reply('If you have seen the welcome message, your chat has been registered with our services.');
+})
+
 bot.launch()
 
 // Enable graceful stop
