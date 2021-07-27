@@ -2,11 +2,11 @@ const { Telegraf, session } = require('telegraf');
 const upload = require('./upload');
 
 require('dotenv').config();
-require('./dbconfig')();
+require('./database/dbconfig')();
 require('./upload');
-const { changeTime, userConfirmed } = require('./utils');
+const { changeTime, userConfirmed } = require('./functions/utils');
 
-require('./user');
+require('./database/user');
 const Users = require('mongoose').model('User');
 
 const bot = new Telegraf(process.env.BOT);

@@ -1,7 +1,7 @@
 const schedule = require('node-schedule');
 const messenger = require('./messenger');
 
-require('./user');
+require('../database/user');
 const Users = require('mongoose').model('User');
 
 module.exports = async (bot) => {

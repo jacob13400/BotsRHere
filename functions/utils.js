@@ -1,4 +1,4 @@
-require('./user');
+require('../database/user');
 const Users = require('mongoose').model('User');
 
 const changeTime = async (ctx, type, time) => {

@@ -1,4 +1,4 @@
-require('./user');
+require('../database/user');
 const Users = require('mongoose').model('User');
 
 async function sendConfirmMessage(user, bot) {
