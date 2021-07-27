@@ -42,5 +42,6 @@ module.exports = async (ctx, next) => {
 	await user.save();
 	ctx.session.hasInitiatedFileUpload = false;
 	ctx.reply('Awesome!');
-	ctx.reply('Now you can use /interval to set message interval and /deadline to set confirm deadline');
+	ctx.reply(`We will send you a message in every ${user.duration} minutes with ${user.deadline} minutes to confirm`);
+	ctx.reply('You can use /interval to set message interval and /deadline to set confirm deadline');
 }

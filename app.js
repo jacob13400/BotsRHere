@@ -1,9 +1,9 @@
 const { Telegraf, session } = require('telegraf');
-const middleware = require('./middleware');
+const upload = require('./upload');
 
 require('dotenv').config();
 require('./dbconfig')();
-require('./middleware');
+require('./upload');
 const { changeTime, userConfirmed } = require('./utils');
 
 require('./user');
@@ -116,7 +116,7 @@ bot.action('15min_in', async ctx => changeTime(ctx, 1, 15));
 
 bot.on('sticker', userConfirmed);
 
-bot.use(middleware);
+bot.use(upload);
 
 bot.launch()
 
