@@ -14,14 +14,23 @@ const UserSchema = new mongoose.Schema({
 	// Last time user replied to message
 	lastConfirmTime: Date,
 
+	// Last time confirmation message was send to user
+	lastMessageTime: Date,
+
 	// Has confirmed to last message
 	hasConfirmed: Boolean,
 	
 	// Interval duration in days for scheduling messages
 	duration: {
 		type: Number,
-		default: 10
+		default: 5
+	},
+
+	// Deadline time
+	deadline: {
+		type: Number,
+		default: 1
 	}
-});
+}); 
 
 mongoose.model('User', UserSchema);
