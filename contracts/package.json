@@ -1,0 +1,14 @@
+{
+  "name": "whakdbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "punkster21",
+  "license": "MIT",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.4.1",
+    "dotenv": "^10.0.0",
+    "ethereumjs-tx": "^2.1.2",
+    "twit": "^2.2.11",
+    "web3": "^1.4.0"
+  }
+}
