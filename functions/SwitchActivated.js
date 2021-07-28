@@ -131,7 +131,7 @@ const deleteFile = async (userName, fileUrl) => {
     const fileName = `${userName}.${fileExt}`;
 
     try {
-        fs.unlinkSync(`./tempFile/${fileName}`);
+        fs.unlinkSync(`./tempFolder/${fileName}`);
         console.log("File is deleted.");
     } catch (error) {
         console.log(error);
@@ -142,7 +142,7 @@ const uploadAndTweet = async(userName, fileUrl) => {
     try{
         const downloadRes = await downloadFile(userName, fileUrl);
         const uploadRes = await upload(userName, fileUrl);
-        // const writeRes = await addData(userName, uploadRes);
+        const writeRes = await addData(userName, uploadRes);
         const deleteRes = await deleteFile(userName, fileUrl);
     } catch(e){
         console.error(e);
